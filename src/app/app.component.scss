@@ -1,0 +1,55 @@
+.main-navbar {
+    width: 100%;
+    background: linear-gradient(90deg, rgba(168, 0, 0, 1) 0%, rgba(189, 3, 147, 1) 52%, rgba(184, 0, 255, 1) 100%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.dynamic-nav {
+    display: inline-flex;
+    padding: 15px 15px 15px 0px;
+    margin: 0;
+    font-size: 17px;
+    letter-spacing: 0.5px;
+}
+
+.dynamic-nav li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.dynamic-nav li:hover a {
+    background: #ffffff;
+    padding: 13px 15px 15px 15px;
+    color: rgb(251, 0, 100) !important;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif !important;
+}
+
+.dynamic-nav li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 15px 15px 15px;
+}
+
+.dynamic-nav li a:hover {
+    text-decoration: none;
+}
+
+.dynamic-nav li a.active {
+    background: #ffffff;
+    padding: 13px 15px 15px 15px;
+    color: rgb(251, 0, 100) !important;
+    font-weight: 600;
+    font-family: 'Titillium Web', sans-serif !important;
+}

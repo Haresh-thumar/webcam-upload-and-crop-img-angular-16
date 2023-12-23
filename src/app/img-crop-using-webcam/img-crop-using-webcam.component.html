@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6" *ngIf="showHideWebcam">
+            <h2 class="fw-bold text-danger">Capture Image using Webcam</h2>
+            <webcam [trigger]="invokeObservable" (imageCapture)="captureImg($event)"></webcam>
+            <button class="btn btn-success" (click)="getSnapshot()"> Capture Image </button>
+        </div>
+        <!-- <div class="col-md-6">
+            <div *ngIf="webcamImage?.imageAsDataUrl">
+                <img [src]="webcamImage?.imageAsDataUrl" height="400px" />
+            </div>
+        </div> -->
+        <div class="col-md-6">
+            <image-cropper
+                [imageChangedEvent]="capturedImage"
+                [maintainAspectRatio]="true"
+                [aspectRatio]="4 / 3"
+                format="jpeg"
+                [imageURL]="capturedImage"
+                (imageCropped)="imageCropped($event)"
+                (cropperReady)="cropperReady($event)"></image-cropper>
+            <button class="btn btn-danger" *ngIf="capturedImage"> Crop Image </button>
+        </div>
+        <div class="col-md-6" *ngIf="croppedImage">
+            <img [src]="croppedImage" />
+        </div>
+    </div>
+</div>
+<input type="file" (change)="fileChangeEvent($event)" />

@@ -57,7 +57,6 @@ export class ImgCropUsingWebcamComponent {
 
   /*--------- Cropped Image ----------*/
   imageCropped(event: ImageCroppedEvent) {
-    debugger;
     const fileSizeInBytes = event.blob.size;
     const fileSizeInMB = fileSizeInBytes / (1024 * 1024); // Convert bytes to megabytes
     console.log(`size: ${fileSizeInMB.toFixed(2)} MB`);
@@ -99,6 +98,58 @@ export class ImgCropUsingWebcamComponent {
   }
 
 
+
+  /*----------------------------------------------------------------------------------
+                                      File Upload
+  ----------------------------------------------------------------------------------*/
+  files: any;
+  filechange(event: any) {
+    // console.log("file upload", event.target.files[0]);
+    this.files = event.target.files[0];
+
+    // File Preview
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.files = reader.result as string;
+    };
+    reader.readAsDataURL(this.files);
+
+    this.capturedImage = this.files;
+    console.log("file upload", this.files);
+  }
+
+
+
+
+
+
+
+
+
+  // <input type="file" (change)="onFileSelected($event)">
+  // <button (click)="uploadFile()">Upload File</button>
+
+
+
+  // selectedFile: File;
+
+  // constructor(private http: HttpClient) {}
+
+  // onFileSelected(event): void {
+  //   this.selectedFile = event.target.files[0];
+  // }
+
+  // uploadFile(): void {
+  //   const formData = new FormData();
+  //   formData.append('file', this.selectedFile);
+
+  //   this.http.post('your-upload-endpoint', formData)
+  //     .subscribe(response => {
+  //       console.log('File uploaded successfully:', response);
+  //     }, error => {
+  //       console.error('Error uploading file:', error);
+  //     });
+  // }
 
 
 }

@@ -1,5 +1,13 @@
 <div class="container mt-5">
     <div class="row">
+        <div class="col-md-6">
+            <input type="file" (change)="filechange($event)">
+        </div>
+        <div class="col-md-6" *ngIf="files">
+            <img [src]="files" alt="upload img">
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-6" *ngIf="showHideWebcam">
             <h2 class="fw-bold text-danger">Capture Image using Webcam</h2>
             <webcam [trigger]="invokeObservable" (imageCapture)="captureImg($event)"></webcam>
@@ -16,6 +24,7 @@
                 [maintainAspectRatio]="true"
                 [aspectRatio]="4 / 3"
                 format="jpeg"
+                [imageFile]="files"
                 [imageURL]="capturedImage"
                 (imageCropped)="imageCropped($event)"
                 (cropperReady)="cropperReady($event)"></image-cropper>
@@ -26,4 +35,3 @@
         </div>
     </div>
 </div>
-<input type="file" (change)="fileChangeEvent($event)" />

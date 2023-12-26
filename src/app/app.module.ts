@@ -9,13 +9,18 @@ import { WebcamModule } from 'ngx-webcam';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ImageCropperComponent } from './image-cropper/image-cropper.component';
 import { ImgCropUsingWebcamComponent } from './img-crop-using-webcam/img-crop-using-webcam.component';
+import { FileUploadProgressIndicatorComponent } from './file-upload-progress-indicator/file-upload-progress-indicator.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     WebcamCropperComponent,
     ImageCropperComponent,
-    ImgCropUsingWebcamComponent
+    ImgCropUsingWebcamComponent,
+    FileUploadProgressIndicatorComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,10 @@ import { ImgCropUsingWebcamComponent } from './img-crop-using-webcam/img-crop-us
     FormsModule,
     ReactiveFormsModule,
     WebcamModule,
-    ImageCropperModule
+    ImageCropperModule,
+    MatProgressBarModule,
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

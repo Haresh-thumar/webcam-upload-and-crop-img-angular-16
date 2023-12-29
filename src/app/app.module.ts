@@ -13,6 +13,7 @@ import { FileUploadProgressIndicatorComponent } from './file-upload-progress-ind
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { WebcamImgComponent } from './webcam-img/webcam-img.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     WebcamCropperComponent,
     ImageCropperComponent,
     ImgCropUsingWebcamComponent,
-    FileUploadProgressIndicatorComponent
+    FileUploadProgressIndicatorComponent,
+    WebcamImgComponent
   ],
   imports: [
     BrowserModule,

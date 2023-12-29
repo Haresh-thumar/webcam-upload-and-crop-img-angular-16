@@ -1,34 +1,54 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6">
-            <input type="file" (change)="filechange($event)">
-        </div>
-        <div class="col-md-6" *ngIf="files">
-            <img [src]="files" alt="upload img">
+            <div class="containers">
+                <input type="file" #fileDropRef id="fileDropRef" multiple="false" (change)="fileChangeEvent($event)"
+                    accept="file_type | .png, .jpg, .JPEG, .webp" />
+                <i class="material-icons file-attach-icon">attach_file</i>
+                <h4>Drag and drop file here</h4>
+                <h4>or</h4>
+                <label for="fileDropRef">Browse for file</label>
+            </div>
         </div>
     </div>
-    <div class="row">
+    <button (click)="showHideWebcam = true" class="camera-btn btn"><i class="material-icons me-2">camera_alt</i>
+        Camera</button>
+    <div class="row mb-4">
         <div class="col-md-6" *ngIf="showHideWebcam">
             <h2 class="fw-bold text-danger">Capture Image using Webcam</h2>
-            <webcam [trigger]="invokeObservable" (imageCapture)="captureImg($event)"></webcam>
-            <button class="btn btn-success" (click)="getSnapshot()"> Capture Image </button>
+            <webcam [trigger]="triggerObservable" [allowCameraSwitch]="allowCameraSwitch"
+                [switchCamera]="nextWebcamObservable"
+                (imageCapture)="captureImg($event)" (initError)="handleInitError($event)" class="webcame-box"></webcam>
+            <mat-icon class="actionBtn" (click)="getSnapshot()" title="Take Picture">camera_alt</mat-icon>
         </div>
-        <!-- <div class="col-md-6">
-            <div *ngIf="webcamImage?.imageAsDataUrl">
-                <img [src]="webcamImage?.imageAsDataUrl" height="400px" />
-            </div>
-        </div> -->
         <div class="col-md-6">
             <image-cropper
                 [imageChangedEvent]="capturedImage"
                 [maintainAspectRatio]="true"
                 [aspectRatio]="4 / 3"
-                format="jpeg"
-                [imageFile]="files"
+                format="png"
                 [imageURL]="capturedImage"
-                (imageCropped)="imageCropped($event)"
-                (cropperReady)="cropperReady($event)"></image-cropper>
-            <button class="btn btn-danger" *ngIf="capturedImage"> Crop Image </button>
+                (imageCropped)="imageCropped($event)" [transform]="transform"
+                [canvasRotation]="canvasRotation"></image-cropper>
+            <br>
+            <!----------------- Action Button ------------------->
+            <div class="image-cropped-btn">
+                <button class="btn btn-sm btn-success" (click)="rotateLeft()">
+                    <i class="material-icons">rotate_left</i>
+                </button>
+                <button class="btn btn-sm btn-success" (click)="flipHorizontal()">
+                    <i class="material-icons">flip</i>
+                </button>
+                <button class="btn btn-sm btn-success" (click)="flipVertical()">
+                    <i class="material-icons" style="transform: rotate(90deg);">flip</i>
+                </button>
+                <button class="btn btn-sm btn-success" (click)="zoomIn()">
+                    <i class="material-icons">zoom_in</i>
+                </button>
+                <button class="btn btn-sm btn-success" (click)="zoomOut()">
+                    <i class="material-icons">zoom_out</i>
+                </button>
+            </div>
         </div>
         <div class="col-md-6" *ngIf="croppedImage">
             <img [src]="croppedImage" />

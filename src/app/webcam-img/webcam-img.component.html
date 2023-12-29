@@ -1,0 +1,19 @@
+<div>
+  <webcam class="webcame-box"
+    [trigger]="triggerObservable"
+    (imageCapture)="handleImage($event)"
+    [height]="400"
+    [width]="400"
+    [allowCameraSwitch]="allowCameraSwitch"
+    [switchCamera]="nextWebcamObservable"
+    [videoOptions]="videoOptions"
+    (cameraSwitched)="cameraWasSwitched($event)"
+    (initError)="handleInitError($event)" style="width: 300px !important;"></webcam>
+  <br />
+  <mat-icon class="actionBtn" (click)="triggerSnapshot()" title="Take Picture">camera_alt</mat-icon>
+</div>
+<!-------------- Webcam Upload in Another Component ------------->
+<!-- <div *ngIf="webcamImgSection">
+  <app-camera (pictureTaken)="handleImage($event, '3')" *ngIf="!capturedImage"></app-camera>
+  <img [src]="capturedImage" alt="profile preview" *ngIf="capturedImage">
+</div> -->

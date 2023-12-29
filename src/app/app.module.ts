@@ -14,6 +14,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { WebcamImgComponent } from './webcam-img/webcam-img.component';
+import { TimerCountComponent } from './timer-count/timer-count.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WebcamImgComponent } from './webcam-img/webcam-img.component';
     ImageCropperComponent,
     ImgCropUsingWebcamComponent,
     FileUploadProgressIndicatorComponent,
-    WebcamImgComponent
+    WebcamImgComponent,
+    TimerCountComponent
   ],
   imports: [
     BrowserModule,

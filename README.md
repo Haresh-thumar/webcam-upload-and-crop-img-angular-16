@@ -1,27 +1,34 @@
-# Angular16MatCustomize
+# Angular v16 Webcam Upload & Crop Image
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This Angular project in v16.2.0.
 
-## Development server
+## Install Dependencies & Start local development server :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```bash
+npm i  &  ng serve
+```
 
-## Code scaffolding
+open your browser and navigate to `http://localhost:4200/`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Generate Build
 
-## Build
+```bash
+ng build
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+## Project Code
+<img width="1855" height="872" alt="image" src="https://github.com/user-attachments/assets/021588a6-491a-42a5-a0a2-f74278a688da" />
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Output 1
+<img width="1904" height="890" alt="image" src="https://github.com/user-attachments/assets/fb1a2065-8293-49a4-b36a-7d8bdfa41a69" />
 
-## Running end-to-end tests
+## Output 2
+<img width="1905" height="933" alt="image" src="https://github.com/user-attachments/assets/e56e1535-2a25-4a39-a799-ba3c16ec9374" />
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Output 3
+<img width="1904" height="929" alt="image" src="https://github.com/user-attachments/assets/8ecdc4b8-93fa-4fc7-9a4b-65fbb2a42cc5" />
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Output 4
+<img width="1919" height="541" alt="image" src="https://github.com/user-attachments/assets/af065928-382c-4cf0-bc1a-265612e2ca41" />
